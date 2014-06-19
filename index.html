@@ -1,7 +1,219 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello GitHUb</h1>
-<p> Let´s hope this works </p>
+<head>
+  <title>A Body Mass Index calculator</title>
+  <meta charset="utf-8">
+  <meta name="description" content="A Body Mass Index calculator">
+  <meta name="author" content="Martin Heath">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>A Body Mass Index calculator</h1>
+    <h2>data products project summer 2014</h2>
+    <p>Martin Heath<br/>Student of Computer science in Tampere university</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Table of Content</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Basic idea of application</li>
+<li>How to use it</li>
+<li>How it was made</li>
+<li>The classification of BMI</li>
+<li>Why it is good</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Basic Idea of Application</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The shiny app I decided to make was a very simple BMI(Body Mass Index) calculator.
+The user would input their age, weight, height and sex and the app would calculate the BMI and show the results.</p>
+
+<p>The program would react to certain elements, like age and sex. The application would also give the user a classification of their BMI, ranging from underweight to overweight, according to the general limits.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>How to use it</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The program is quite simple. On the sidebar of the page, there are three numeric input boxes and a pair or radio buttons. The numeric boxes represent age, height and weight respectively. The radio buttons represent sex.</p>
+
+<p>This data is filled and then submitted via a Submit - button.</p>
+
+<p>The data is calculated and the user is given his/her BMI, a notification if needed and a classification of her/his BMI.</p>
+
+<p>Very easy, very simple.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>How it was made</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The application was very simple, befitting a first-time shiny application. The data is collected from the user input and calculated using the basic BMI formula, which is</p>
+
+<p>Height * (weight squared)</p>
+
+<p>So, let&#39;s say I weigh 59kg and my height is 165cm. That would mean</p>
+
+<pre><code class="r">59/(165^2)
+</code></pre>
+
+<pre><code>## [1] 0.002167
+</code></pre>
+
+<p>Which, when multiplied appropriately, comes to a BMI of about 21.7, which is healthy.</p>
+
+<p>After this, the application checks if the user is 18 or younger and notifies, that the BMI is not accurate at this age.</p>
+
+<p>Finally, using a simple set of if - else statements, the BMI is classified and the user is given simple feedback.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>BMI Classification</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The body mass index, or BMI, is a widely used method of measuring weight. Though it cannot be seen as hard science. It is slightly inaccurate and can only provide loose concepts of weight limits. However, this simplicity is what makes it great. Anyone can easily and quicly calculate their BMI and act accordingly.</p>
+
+<p>In this application, the limits are as follows:</p>
+
+<p>under 18 = Clinical underweight
+18 - 18.5 = slightly underweight
+18 - 25 = Normal BMI, healthy
+25 - 30 = slightly overweight
+over 30 clinical obesity</p>
+
+<p>so, as our earlier example shows:</p>
+
+<pre><code class="r">BMI = 21.7
+
+if(BMI &gt; 18 &amp; BMI &lt; 25) 
+  &quot;Your body is healthy, at least weightwise. Congratulations!&quot;
+</code></pre>
+
+<pre><code>## [1] &quot;Your body is healthy, at least weightwise. Congratulations!&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>Why it is good</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>A lot of health magazines and websites mention BMI and a few professional medical sites use it as well. </p>
+
+<p>An easy and simple app can add alot to these sites, letting users try it out and maybe learn something about their health.</p>
+
+<p>The app is very universal and can be easily assimilated into any site or program. The program can also utilise plots or perhaps a link to a help service, if your BMI is looking worrisom.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Table of Content'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Basic Idea of Application'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='How to use it'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='How it was made'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='BMI Classification'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Why it is good'>
+         6
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
 </body>
-</html>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
